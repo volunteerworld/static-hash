@@ -1,0 +1,5 @@
+Flow_Security_Cryptography_HashService:
+  backend: Vowo\StaticHash\Cache\StaticBackend
+  backendOptions:
+    defaultLifetime: 0
+  persistent: true
