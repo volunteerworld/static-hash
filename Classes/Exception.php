@@ -1,7 +1,6 @@
 <?php
 namespace Vowo\StaticHash;
 
-
 use Neos\Flow\Annotations as Flow;
 
 /**
@@ -9,5 +8,5 @@ use Neos\Flow\Annotations as Flow;
  */
 class Exception extends \Neos\Flow\Exception
 {
-}
 
+}

@@ -1,0 +1,23 @@
+# Javascript Node CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-javascript/ for more details
+#
+version: 2
+jobs:
+  test_backend:
+    docker:
+      # specify the version you desire here test
+      - image: circleci/php:7.1-cli
+
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+      - run: curl -OL https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar
+      - run: php phpcs.phar --standard=PSR2 --colors --warning-severity=0 Classes
+
+workflows:
+  version: 2
+  test_all:
+    jobs:
+      - test_backend

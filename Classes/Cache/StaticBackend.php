@@ -1,12 +1,6 @@
 <?php
 namespace Vowo\StaticHash\Cache;
 
-/*
-
- */
-
-// @codeCoverageIgnoreStart
-
 use Neos\Cache\Backend\AbstractBackend as AbstractCacheBackend;
 use Neos\Flow\Annotations as Flow;
 use Neos\Cache\Backend\PhpCapableBackendInterface;
@@ -52,9 +46,9 @@ class StaticBackend extends AbstractCacheBackend implements PhpCapableBackendInt
      */
     public function get($entryIdentifier = '')
     {
-        if(isset($this->hash)){
+        if (isset($this->hash)) {
             return $this->hash;
-        }else{
+        } else {
             throw new Exception(sprintf('The static hash don\'t exist , please check your settings.', $this->hash), 1511813427);
         }
     }
@@ -138,4 +132,3 @@ class StaticBackend extends AbstractCacheBackend implements PhpCapableBackendInt
     {
     }
 }
-// @codeCoverageIgnoreEnd
